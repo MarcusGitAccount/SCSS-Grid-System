@@ -1,0 +1,149 @@
+//  sass --watch styles.scss:styles.css
+
+$columns: 12;
+$column-base: 100% / ($columns);
+
+$font-scales: (
+  xs: 15px,
+  sm: 17px,
+  md: 19px,
+  lg: 21px,
+  xl: 23px
+);
+
+$breakpoints: (
+  xs: 320px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$row-margin-sides: 15px;
+$row-margin-tops: 3.5px;
+
+$colors: (
+  teal: #009688,
+  cyan: #18ffff,
+  orange: #e65100,
+  blue-grey: #607d8b
+);
+
+* {
+  font-family: 'Asap', sans-serif;
+  color: #fff;
+  padding: 0;
+}
+
+body {
+  background: #255255;
+}
+
+.container {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.container.fluid {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  margin: $row-margin-tops $row-margin-sides;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.row.space-around {
+  justify-content: space-around;
+}
+
+.row.space-between {
+  justify-content: space-between;
+}
+
+.row.row-center {
+  justify-content: center;
+}
+
+.row.full {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bring-right {
+  margin-left: auto;
+}
+
+.bring-left {
+  margin-right: auto;
+}
+
+@each $type, $break-size in $breakpoints {
+  $init-columns: null;
+  $init-offsets: null;
+  
+  @for $size from 1 through $columns {
+    $init-columns: append($init-columns, ".col-#{$type}-#{$size}", comma);
+    $init-offsets: append($init-offsets, ".col-#{$type}-offset-#{$size}", comma);
+  }
+  
+  @if ($break-size) {
+    
+    @media screen and (min-width: $break-size) {
+      .font-scale {
+        font-size: map-get($font-scales, $type);
+      }
+      
+      #{$init-columns} {
+        flex: 0 0 auto;
+        max-width: 0;
+      }
+      
+      #{$init-offsets} {
+        margin-left: 0;
+      }
+      
+      @for $size from 1 through $columns {
+        .col-#{$type}-#{$size} {
+          flex-basis: $column-base * $size;
+          max-width: $column-base * $size;
+        }
+        
+        .col-#{$type}-offset-#{$size} {
+          margin-left: $column-base * $size;
+        }
+      }
+    }
+  }
+}
+
+@each $name, $value in $colors {
+  .#{$name} {
+    background: $value;
+  }
+  
+  .text-#{$name} {
+    color: $value;
+  }
+}
+
+.last {
+  order: 1;
+}
+
+.first {
+  order: -1;
+}
