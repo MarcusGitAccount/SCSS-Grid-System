@@ -30,8 +30,7 @@ Customizable grid system created with SCSS. It resemblances Twitter syntax becau
 Change the variable values in the sass file, compile it and enjoy.
 
 #  Example
-
-...html
+```html
   <div class="container">
     <div class="row">
       <div class="font-scale col-xs-12 text-center col-sm-1 cyan col-md-6 col-lg-8 col-xl-12">sm-1 md-6 lg-8 xl-12</div>
@@ -57,4 +56,4 @@ Change the variable values in the sass file, compile it and enjoy.
       <div class="col-md-1 orange text-center">12</div>
     </div>
   </div>
-....
+```
