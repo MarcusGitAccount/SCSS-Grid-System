@@ -66,6 +66,18 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: $row-margin-tops $row-margin-sides;
+  margin-top: $row-margin-tops;
+  margin-bottom: $row-margin-tops;
+}
+
+.row.column-spacing-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row.column-spacing-top > div {
+  margin-top: $row-margin-tops;
+  margin-bottom: $row-margin-tops;
 }
 
 .row.reverse {

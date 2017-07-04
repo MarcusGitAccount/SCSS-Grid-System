@@ -30,7 +30,17 @@ body {
   flex-basis: auto;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 3.5px 15px; }
+  margin: 3.5px 15px;
+  margin-top: 3.5px;
+  margin-bottom: 3.5px; }
+
+.row.column-spacing-top {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.row.column-spacing-top > div {
+  margin-top: 3.5px;
+  margin-bottom: 3.5px; }
 
 .row.reverse {
   -webkit-box-orient: horizontal;
