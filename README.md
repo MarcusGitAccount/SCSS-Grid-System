@@ -58,7 +58,7 @@ Change the variable values in the sass file, compile it and enjoy.
   </div>
 ```
 
-# Browser compatbility
+# Browser compatibility
 
 Same as for flexbox:
 
