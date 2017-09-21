@@ -1,6 +1,6 @@
 # SCSS-Grid-System
 
-Customizable grid system created with SCSS. It resemblances Twitter syntax because it's already pretty good and intuitive. And I like it.
+Customizable grid system created with SCSS. It resemblances Twitter's Bootstrap framework syntax because it's already pretty good and intuitive and I also like it. I've created this frameworks because I needed a lightweight and customizable css grid-system.
 
 # It allows the following:
 
@@ -65,3 +65,7 @@ Same as for flexbox:
 |       Chrome       | IE / Edge | Firefox |    Safari    |                   Opera |
 |--------------------|-----------|---------|--------------|-------------------------|
 | 29.0 21.0 -webkit- |    11.0   |   28.0  | 6.1 -webkit- | 17.0 15.0 -webkit- 12.1 |
+
+# License
+
+<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLV3</a>
